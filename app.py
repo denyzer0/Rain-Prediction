@@ -29,7 +29,7 @@ def predict():
 		# Rainfall
 		rainFall = float(request.form['rainfall'])
 		# Evaporation
-		Evaporation = float(request.form['evaporation'])
+		evaporation = float(request.form['evaporation'])
 		# Sunshine
 		sunShine = float(request.form['sunshine'])
 		# Wind Gust Speed
@@ -125,7 +125,7 @@ def predict():
 		elif(rainToday== 'No'):
 			rainToday== 0
 
-		input_lst = [location, minTemp, maxTemp, rainFall, Evaporation, sunShine, windGustDir, windGustSpeed, winddDir9am, winddDir3pm, windSpeed9am, windSpeed3pm, humidity9am, humidity3pm, pressure9am, pressure3pm, cloud9am, cloud3pm, temp9am, temp3pm, rainToday, month, day]
+		input_lst = [location, minTemp, maxTemp, rainFall, evaporation, sunShine, windGustDir, windGustSpeed, winddDir9am, winddDir3pm, windSpeed9am, windSpeed3pm, humidity9am, humidity3pm, pressure9am, pressure3pm, cloud9am, cloud3pm, temp9am, temp3pm, rainToday, month, day]
 		input_lst = np.array(input_lst).reshape((1, -1))
 		pred = model.predict(input_lst)
 		output = pred
